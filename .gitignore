@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Do not add database configuration to repository!
+/config/database.yml
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
