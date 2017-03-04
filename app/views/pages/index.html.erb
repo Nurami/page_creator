@@ -1,0 +1,7 @@
+<% @pages.each do |page|%>
+<output>
+  <%= page.title %>
+  <%= page.data %>
+  <%= link_to 'show', page %>
+</output>
+<% end %>
