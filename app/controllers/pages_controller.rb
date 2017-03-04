@@ -27,6 +27,17 @@ class PagesController < ApplicationController
     end
       
   end
+  def update
+    if @page.check_password?(password_params)
+      if @page.update(page_params)
+        redirect_to @page, notice: "Successful"
+      else
+        render :edit
+      end
+    else
+      render :edit
+    end
+  end
 
   private 
 
@@ -36,6 +47,10 @@ class PagesController < ApplicationController
 
   def page_params
     params.require(:page).permit(:title, :data)
+  end
+
+  def password_params
+    params.require(:page).permit(:password)
   end
   
 end

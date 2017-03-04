@@ -18,6 +18,12 @@
     <%= f.label :data %>
     <%= f.text_field :data %>
   </div>
+  <% if action_name=="edit" %>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
