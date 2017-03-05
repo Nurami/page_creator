@@ -17,10 +17,10 @@ class PagesController < ApplicationController
   end
 
   def create
+    binding.pry
     @page = Page.new(page_params)
     password = @page.generate_password
     @page.password = @page.encode_password(password)
-    binding.pry
     if @page.save
       redirect_to @page, notice: "Your password #{password} for editing"
     else
@@ -29,14 +29,15 @@ class PagesController < ApplicationController
       
   end
   def update
-    if @page.check_password?(password_params)
+    binding.pry
+    if @page.check_password?(password_params[:password])
       if @page.update(page_params)
         redirect_to @page, notice: "Successful"
       else
-        render :edit
+        render :edit, notice: "brrrr"
       end
     else
-      render :edit
+      render :show
     end
   end
 

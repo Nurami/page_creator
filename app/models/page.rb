@@ -9,8 +9,7 @@ class Page < ApplicationRecord
   end
 
   def encode_password(pass)
-    chifr =  pass.to_s + created_at.to_s
-    Digest::SHA2.new(512).hexdigest(chifr)
+    Digest::SHA2.new(256).hexdigest(pass.to_s)
   end
 
   def check_password?(pass_for_editing)

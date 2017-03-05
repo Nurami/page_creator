@@ -21,7 +21,6 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'pry-rails'
 gem 'rspec-rails'
 gem 'capybara'
 gem 'selenium-webdriver'
@@ -30,6 +29,7 @@ gem 'medium-editor-rails'
 gem 'therubyracer'
 gem 'ckeditor'
 gem 'dragonfly'
+gem 'pry-byebug'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
