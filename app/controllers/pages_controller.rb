@@ -20,6 +20,7 @@ class PagesController < ApplicationController
     @page = Page.new(page_params)
     password = @page.generate_password
     @page.password = @page.encode_password(password)
+    binding.pry
     if @page.save
       redirect_to @page, notice: "Your password #{password} for editing"
     else

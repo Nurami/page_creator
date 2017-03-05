@@ -27,6 +27,9 @@ gem 'capybara'
 gem 'selenium-webdriver'
 gem 'guard-rspec', require: false
 gem 'medium-editor-rails'
+gem 'therubyracer'
+gem 'ckeditor'
+gem 'dragonfly'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

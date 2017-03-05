@@ -9,15 +9,20 @@
       </ul>
     </div>
   <% end%>
+
+  <%= javascript_include_tag 'Ckeditor.cdn_url'%>
+  
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
 
+  
+
   <div class="field">
-    <%= f.label :data %>
-    <%= f.text_field :data %>
+     <%= f.cktext_area :data,  ckeditor: { language: 'en'} %>
   </div>
+
   <% if action_name=="edit" %>
   <div class="field">
     <%= f.label :password %>
