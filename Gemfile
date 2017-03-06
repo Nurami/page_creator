@@ -30,6 +30,7 @@ gem 'therubyracer'
 gem 'ckeditor'
 gem 'dragonfly'
 gem 'pry-byebug'
+gem 'friendly_id', '~> 5.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

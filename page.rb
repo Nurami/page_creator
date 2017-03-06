@@ -18,4 +18,4 @@ class Page < ApplicationRecord
     password == encode_password(pass_for_editing)
   end
 
-end
+  

@@ -17,7 +17,6 @@ class PagesController < ApplicationController
   end
 
   def create
-    binding.pry
     @page = Page.new(page_params)
     password = @page.generate_password
     @page.password = @page.encode_password(password)
@@ -29,7 +28,6 @@ class PagesController < ApplicationController
       
   end
   def update
-    binding.pry
     if @page.check_password?(password_params[:password])
       if @page.update(page_params)
         redirect_to @page, notice: "Successful"
@@ -44,7 +42,7 @@ class PagesController < ApplicationController
   private 
 
   def set_product
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
   end
 
   def page_params
