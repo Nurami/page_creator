@@ -32,7 +32,7 @@ class PagesController < ApplicationController
       if @page.update(page_params)
         redirect_to @page, notice: "Successful"
       else
-        render :edit, notice: "brrrr"
+        render :edit, notice: "Not updated"
       end
     else
       render :show

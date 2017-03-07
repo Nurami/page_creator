@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-<div>
+<div class="">
   <%= @page.title %>
+  <%= link_to 'Edit', edit_page_path(@page)%>
 </div>
 <%= raw @page.data %>
