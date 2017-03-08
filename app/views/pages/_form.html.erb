@@ -21,7 +21,7 @@
      <%= f.cktext_area :data,  ckeditor: { language: 'en'} %>
   </div>
   <br>
-  <% if action_name=="edit" %>
+  <% if action_name == "edit" %>
   <div class="field">
     <%= f.label :password %>
     <%= f.text_field :password, :value => ''%>

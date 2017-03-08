@@ -2,7 +2,7 @@ class Page < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   validates :title, presence: true
-  validates :title, length: {maximum: 10}
+  validates :title, length: {maximum: 140}
   validates :title, uniqueness: true
 
   def generate_password
@@ -14,8 +14,12 @@ class Page < ApplicationRecord
     Digest::SHA2.new(256).hexdigest(pass.to_s)
   end
 
-  def check_password?(pass_for_editing)
+  def password_valid?(pass_for_editing)
     password == encode_password(pass_for_editing)
+  end
+
+  def should_generate_new_friendly_id?
+       slug.blank? || title_changed?
   end
 
 end

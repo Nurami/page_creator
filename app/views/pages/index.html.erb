@@ -1,6 +1,8 @@
 <% @pages.each do |page|%>
 <output>
-  <%= link_to page.title, one_page_path(page) %>
+<h3>
+<%= link_to page.title, one_page_path(page) %>  
+</h3>
   <br>
 </output>
 <% end %>
